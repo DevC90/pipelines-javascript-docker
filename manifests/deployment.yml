@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: devcpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devcpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: devcpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: devcpipelinesjavascriptdocker 
+          image: mybasicregistry.azurecr.io/devcpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
